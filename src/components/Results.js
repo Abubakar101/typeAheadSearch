@@ -11,7 +11,7 @@ class Results extends Component {
     );
   };
   render() {
-    return <div className="results">{this.renderResults()}</div>;
+    return <React.Fragment>{this.renderResults()}</React.Fragment>;
   }
 }
 
