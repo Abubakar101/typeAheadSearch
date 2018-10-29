@@ -67,12 +67,10 @@ class App extends Component {
   }
 
   handleState = arr => {
-    if (arr) {
-      this.setState({
-        isLoading: true,
-        results: arr
-      });
-    }
+    this.setState({
+      isLoading: arr ? true : false,
+      results: arr ? arr : []
+    });
   };
 
   render() {
