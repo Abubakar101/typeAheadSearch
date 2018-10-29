@@ -11,11 +11,12 @@ class Input extends Component {
 
   handleValueChange = async e => {
     this.setState({
-      value: e.target.value
-    });
-    const results = await typeHead(this.props.data, this.state.value);
-    console.log(results)
-    this.props.handleState(results);
+        value: e.target.value
+      }, async () => {
+        const results = await typeHead(this.props.data, this.state.value);
+        this.props.handleState(results);
+      }
+    );
   };
 
   render() {

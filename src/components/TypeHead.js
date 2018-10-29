@@ -5,7 +5,7 @@ const checkParams = (arr, input) => {
     return false;
   }
   
-  const typeHead = (arr, input) => {
+  const typeHead = async (arr, input) => {
     if (checkParams(arr, input)) return false;
     const wordIndexArr = [];
   
@@ -17,8 +17,8 @@ const checkParams = (arr, input) => {
         wordIndexArr.push([word, wordIndex]);
       }
     }
-    wordIndexArr.sort((a, b) => a[1] - b[1] || a[0].length - b[0].length);
-    return wordIndexArr.map(a => a[0].split(" ").map(e => e[0].toUpperCase() + e.substring(1)).join(" "));
+    await wordIndexArr.sort((a, b) => a[1] - b[1] || a[0].length - b[0].length);
+    return await wordIndexArr.map(a => a[0].split(" ").map(e => e[0].toUpperCase() + e.substring(1)).join(" "));
   };
 
   export default typeHead;
